@@ -70,6 +70,6 @@ app.use("/post", postRouter);
 app.use("/posts", postsRouter);
 app.use("/hashtag", hashtagRouter);
 
-app.listen(prod ? process.end.PORT : 3085, () => {
-  console.log(`백엔드 서버${3085}번에서 작동중`);
+app.listen(prod ? process.env.PORT : 3085, () => {
+  console.log(`백엔드 서버${process.env.PORT}번에서 작동중`);
 });
