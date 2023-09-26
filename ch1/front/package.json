@@ -23,7 +23,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "prestart": "npm un build",
-    "start": "cross-env PORT=80 NODE_ENV=production pm2 start nuxt --start",
+    "start": "cross-env PORT=80 NODE_ENV=production pm2 start nuxt",
     "lint": "eslint **/*"
   },
   "author": "",
