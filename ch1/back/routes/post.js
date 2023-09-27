@@ -16,7 +16,7 @@ AWS.config.update({
 const upload = multer({
   storage: multerS3({
     s3: new AWS.S3(),
-    bucket: "vue",
+    bucket: "vue-sns",
     key(req, file, cb) {
       cb(null, `original/${Date.now()}${path.basename(file.originalname)}`);
     },
