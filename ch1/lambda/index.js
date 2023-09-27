@@ -9,9 +9,10 @@ exports.handler = async (event, context, callback) => {
   const filename = Key.split("/")[Key.split("/").length - 1];
   const ext = Key.split(".")[Key.split(".").length - 1];
   console.log(Key, filename, ext);
-  const requiredFormat = ext === "jpg" ? "jpeg" : ext;
+  const requiredFormat = ext === "jpg" ? "jpeg" : ext; // sharp에서는 jpg 대신 jpeg사용합니다
   try {
     const s3Object = await S3.getObject({
+      // S3에서 이미지를 받아 옵니다.
       Bucket,
       Key,
     }).promise();
