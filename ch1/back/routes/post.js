@@ -8,7 +8,7 @@ const path = require("path");
 const db = require("../models");
 
 AWS.config.update({
-  region: "ap-northest-2",
+  region: "ap-northeast-2",
   accessKeyId: process.env.S3_ACCESS_KEY_ID,
   secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
 });
@@ -27,7 +27,6 @@ const upload = multer({
 router.post("/", isLoggedIn, async (req, res, next) => {
   try {
     const hashtags = req.body.content.match(/#[^\s#]+/g);
-    console.log("^^");
     console.log(hashtags);
     const newPost = await db.Post.create({
       content: req.body.content,
