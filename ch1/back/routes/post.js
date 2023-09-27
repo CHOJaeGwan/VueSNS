@@ -2,25 +2,29 @@ const express = require("express");
 const { isLoggedIn } = require("./middlewares");
 const router = express.Router();
 const multer = require("multer");
+const AWS = require("aws-sdk");
+const multerS3 = require("multer-s3");
 const path = require("path");
 const db = require("../models");
 
+AWS.config.update({
+  region: "ap-northest-2",
+  accessKeyId: process.env.S3_ACCESS_KEY_ID,
+  secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+});
+
 const upload = multer({
-  storage: multer.diskStorage({
-    destination(req, file, done) {
-      done(null, "uploads");
-    },
-    filename(req, file, done) {
-      const ext = path.extname(file.originalname);
-      const basename = path.basename(file.originalname, ext);
-      done(null, basename + Date.now() + ext);
+  storage: multerS3({
+    s3: new AWS.S3(),
+    bucket: "vue",
+    key(req, file, cb) {
+      cb(null, `original/${Date.now()}${path.basename(file.originalname)}`);
     },
   }),
   limit: { fileSize: 20 * 1024 * 1024 },
 });
 
 router.post("/", isLoggedIn, async (req, res, next) => {
-  console.log("&&&");
   try {
     const hashtags = req.body.content.match(/#[^\s#]+/g);
     console.log("^^");
@@ -75,7 +79,7 @@ router.post("/", isLoggedIn, async (req, res, next) => {
 });
 
 router.post("/images", isLoggedIn, upload.array("image"), (req, res) => {
-  res.json(req.files.map((v) => v.filename));
+  res.json(req.files.map((v) => v.location));
 });
 
 router.get("/:id", async (req, res, next) => {
