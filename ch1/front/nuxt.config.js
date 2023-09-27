@@ -68,8 +68,14 @@ module.exports = {
   },
   vuetify: {},
   axios: {
-    browerBaseURL: "http://localhost:3085",
-    baseURL: "http://localhost:3085",
+    browerBaseURL:
+      process.env.NODE_ENV === "production"
+        ? "http://api.jjgssns.com"
+        : "http://localhost:3085",
+    baseURL:
+      process.env.NODE_ENV === "production"
+        ? "http://api.jjgssns.com"
+        : "http://localhost:3085",
     https: false,
   },
   server: {
