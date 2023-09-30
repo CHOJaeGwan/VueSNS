@@ -1,7 +1,9 @@
-const AWS = require("aws-sdk");
+const {
+  S3
+} = require("@aws-sdk/client-s3");
 const Sharp = require("sharp");
 
-const S3 = new AWS.S3({ region: "ap-northeast-2" });
+const S3 = new S3({ region: "ap-northeast-2" });
 
 exports.handler = async (event, context, callback) => {
   const Bucket = event.Records[0].s3.bucket.name;
@@ -15,7 +17,7 @@ exports.handler = async (event, context, callback) => {
       // S3에서 이미지를 받아 옵니다.
       Bucket,
       Key,
-    }).promise();
+    });
     console.log("original", s3Object.Body.length);
     const resizedImage = await Sharp(s3Object.Body)
       .resize(800, 800, {
@@ -28,7 +30,7 @@ exports.handler = async (event, context, callback) => {
       Body: resizedImage,
       Bucket,
       Key: `thumb/${filename}`,
-    }).promise();
+    });
     console.log("put");
     return callback(null, `thumb/${filename}`);
   } catch (error) {
