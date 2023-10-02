@@ -2,10 +2,7 @@ const express = require("express");
 const { isLoggedIn } = require("./middlewares");
 const router = express.Router();
 const multer = require("multer");
-const AWS = require("aws-sdk"),
-      {
-        S3
-      } = require("@aws-sdk/client-s3");
+const AWS = require("aws-sdk");
 const multerS3 = require("multer-s3");
 const path = require("path");
 const db = require("../models");
@@ -18,7 +15,7 @@ AWS.config.update({
 
 const upload = multer({
   storage: multerS3({
-    s3: new S3(),
+    s3: new AWS.S3(),
     bucket: "vue-sns",
     key(req, file, cb) {
       cb(null, `original/${Date.now()}${path.basename(file.originalname)}`);

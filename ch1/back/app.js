@@ -14,7 +14,7 @@ const dotenv = require("dotenv");
 
 const prod = process.env.NODE_ENV === "production";
 const usersRouter = require("./routes/user");
-const postRouter = require("./routes/post").default;
+const postRouter = require("./routes/post");
 const postsRouter = require("./routes/posts");
 const hashtagRouter = require("./routes/hashtag");
 
