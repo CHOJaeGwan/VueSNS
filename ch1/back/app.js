@@ -19,7 +19,7 @@ const postsRouter = require("./routes/posts");
 const hashtagRouter = require("./routes/hashtag");
 
 dotenv.config();
-db.sequelize.sync({});
+db.sequelize.sync({ force: true });
 passportConfig();
 
 if (prod) {
