@@ -1,19 +1,24 @@
 <template>
   <div v-if="images.length === 0"></div>
   <div v-else-if="images.length === 1">
-    <v-img :src="images[0].src" contain aspect-ratio="2" @click="ZoomImage" />
+    <v-img
+      :src="images[0].src.replace(/original\//, 'thumb/')"
+      contain
+      aspect-ratio="2"
+      @click="ZoomImage"
+    />
     <image-zoom v-if="imageZoomed" :closeModal="closeModal" :images="images" />
   </div>
   <div v-else-if="images.length === 2" style="display: flex">
     <v-img
-      :src="images[0].src"
+      :src="images[0].src.replace(/original\//, 'thumb/')"
       contain
       aspect-ratio="2"
       style="flex: 1"
       @click="ZoomImage"
     />
     <v-img
-      :src="images[1].src"
+      :src="images[1].src.replace(/original\//, 'thumb/')"
       contain
       aspect-ratio="2"
       style="flex: 1"
