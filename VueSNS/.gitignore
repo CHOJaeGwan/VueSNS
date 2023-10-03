@@ -1,3 +1,4 @@
 jjgs.pem
 node_modules
 .nuxt
+.env
