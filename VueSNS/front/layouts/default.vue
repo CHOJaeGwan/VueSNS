@@ -3,7 +3,7 @@
     <nav style="margin-bottom: 15px">
       <v-toolbar dark color="green">
         <v-toolbar-title>
-          <nuxt-link to="/">NodeBird</nuxt-link>
+          <nuxt-link to="/">jjgsSNS</nuxt-link>
         </v-toolbar-title>
         <v-spacer />
         <v-toolbar-items>
@@ -72,7 +72,7 @@ export default {
   },
   head() {
     return {
-      title: "NodeBird",
+      title: "jjgsSNS",
     };
   },
 };
