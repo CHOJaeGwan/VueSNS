@@ -105,7 +105,7 @@ router.get("/:id", async (req, res, next) => {
         },
         {
           model: db.Comment,
-          attributes: ["id", "nickname"],
+          attributes: ["id"],
         },
         {
           model: db.Post,
@@ -256,7 +256,7 @@ router.post("/:id/retweet", isLoggedIn, async (req, res, next) => {
         },
         {
           model: db.Comment,
-          attributes: ["id", "nickname"],
+          attributes: ["id"],
         },
         {
           model: db.Post,
