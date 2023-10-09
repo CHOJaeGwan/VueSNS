@@ -165,7 +165,7 @@ router.get("/:id/comments", async (req, res, next) => {
       ],
       order: [["createdAt", "ASC"]],
     });
-    return res.json(comments);
+    res.json(comments);
   } catch (err) {
     console.error(err);
     next(err);
@@ -194,7 +194,7 @@ router.post("/:id/comment", isLoggedIn, async (req, res, next) => {
         },
       ],
     });
-    return res.json(comment);
+    res.json(comment);
   } catch (err) {
     console.error(err);
     next(err);
