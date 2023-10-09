@@ -46,12 +46,12 @@ export default {
           property: "og:image",
           content: this.post.Images[0]
             ? this.post.Images[0].src
-            : "https://vue.nodebird.com/vue-nodebird.png",
+            : "http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg",
         },
         {
           hid: "ogurl",
           property: "og:url",
-          content: `https://vue.nodebird.com/post/${this.post.id}`,
+          content: `http://jjgssns.com/post/${this.post.id}`,
         },
       ],
     };

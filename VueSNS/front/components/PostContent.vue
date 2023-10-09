@@ -21,7 +21,7 @@
           >
             {{ node }}</nuxt-link
           >
-          <span v-else :key="i">{{ node }}</span>
+          <span v-else>{{ node }}</span>
         </template>
       </div>
       <div>{{ $moment(post.createdAt).fromNow() }}</div>

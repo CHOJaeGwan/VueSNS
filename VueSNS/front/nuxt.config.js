@@ -1,6 +1,6 @@
 module.exports = {
   head: {
-    title: "NodeBird",
+    title: "jjgsSNS",
     meta: [
       {
         charset: "utf-8",
@@ -17,17 +17,17 @@ module.exports = {
       {
         hid: "desc",
         name: "description",
-        content: "NodeBird SNS",
+        content: "jjgs의 SNS",
       },
       {
         hid: "ogtitle",
         name: "og:title",
-        content: "NodeBird",
+        content: "jjgsSNS",
       },
       {
         hid: "ogdesc",
         name: "og:description",
-        content: "NodeBird SNS",
+        content: "jjgs SNS",
       },
       {
         hid: "ogtype",
@@ -37,12 +37,13 @@ module.exports = {
       {
         hid: "ogimage",
         property: "og:image",
-        content: "https://vue.nodebird.com/vue-nodebird.png",
+        content:
+          "http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg",
       },
       {
         hid: "ogurl",
         property: "og:url",
-        content: "https://vue.nodebird.com",
+        content: "http://jjgssns.com",
       },
     ],
     link: [
