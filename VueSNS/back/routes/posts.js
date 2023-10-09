@@ -28,6 +28,7 @@ router.get("/", async (req, res, next) => {
         },
         {
           model: db.Comment,
+          attributes: ["id", "nickname"],
         },
         {
           model: db.Post,
