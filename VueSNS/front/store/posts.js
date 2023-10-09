@@ -17,7 +17,7 @@ export const mutations = {
     state.mainPosts.splice(index, 1);
   },
   addComment(state, payload) {
-    const index = state.mainPosts.findIndex((v) => v.id === payload.postId);
+    const index = state.mainPosts.findIndex((v) => v.id === payload.PostId);
     state.mainPosts[index].Comments.unshift(payload);
   },
   loadPost(state, payload) {
