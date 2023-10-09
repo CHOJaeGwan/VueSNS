@@ -165,7 +165,7 @@ router.get("/:id/comments", async (req, res, next) => {
       ],
       order: [["createdAt", "ASC"]],
     });
-    res.json(comments);
+    return res.json(comments);
   } catch (err) {
     console.error(err);
     next(err);
