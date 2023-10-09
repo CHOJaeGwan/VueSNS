@@ -63,6 +63,7 @@ router.post("/", isLoggedIn, async (req, res, next) => {
         {
           model: db.Image,
         },
+        { model: db.Comment },
         {
           model: db.User,
           as: "Likers",
@@ -98,6 +99,7 @@ router.get("/:id", async (req, res, next) => {
         {
           model: db.Image,
         },
+        { model: db.Comment },
         {
           model: db.User,
           as: "Likers",
