@@ -35,12 +35,8 @@
     </v-card>
     <template v-if="commentOpened">
       <comment-form :postId="post.id" />
-      <v-list>
-        <v-list-item
-          v-if="post.Comments"
-          v-for="c in post.Comments"
-          :key="c.id"
-        >
+      <v-list v-if="post.Comments && post.Comments.length">
+        <v-list-item v-for="c in post.Comments" :key="c.id">
           <v-list-item-avatar color="teal">
             <span>{{ c.User.nickname[0] }}</span>
           </v-list-item-avatar>
