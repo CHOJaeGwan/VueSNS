@@ -34,7 +34,7 @@
       </v-card-actions>
     </v-card>
     <template v-if="commentOpened">
-      <CommentForm :postId="post.id" />
+      <comment-form :postId="post.id" />
       <v-list>
         <v-list-item v-for="c in post.Comments" :key="c.id">
           <v-list-item-avatar color="teal">
