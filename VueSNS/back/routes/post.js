@@ -68,6 +68,9 @@ router.post("/", isLoggedIn, async (req, res, next) => {
           as: "Likers",
           attributes: ["id"],
         },
+        {
+          model: db.Comment,
+        },
       ],
     });
     return res.json(fullPost);
@@ -99,6 +102,9 @@ router.get("/:id", async (req, res, next) => {
           model: db.User,
           as: "Likers",
           attributes: ["id"],
+        },
+        {
+          model: db.Comment,
         },
         {
           model: db.Post,
@@ -246,6 +252,9 @@ router.post("/:id/retweet", isLoggedIn, async (req, res, next) => {
           model: db.User,
           as: "Likers",
           attributes: ["id"],
+        },
+        {
+          model: db.Comment,
         },
         {
           model: db.Post,

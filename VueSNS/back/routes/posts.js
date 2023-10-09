@@ -27,6 +27,9 @@ router.get("/", async (req, res, next) => {
           attributes: ["id"],
         },
         {
+          model: db.Comment,
+        },
+        {
           model: db.Post,
           as: "Retweet",
           include: [
