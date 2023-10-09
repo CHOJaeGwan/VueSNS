@@ -46,7 +46,7 @@ export default {
           property: "og:image",
           content: this.post.Images[0]
             ? this.post.Images[0].src
-            : "http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg",
+            : "/static/ggongzi3.jpg",
         },
         {
           hid: "ogurl",
