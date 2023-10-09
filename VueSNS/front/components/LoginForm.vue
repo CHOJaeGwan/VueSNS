@@ -75,11 +75,6 @@ export default {
       this.$store.dispatch("users/logOut");
     },
   },
-  head() {
-    return {
-      title: "로그인",
-    };
-  },
 };
 </script>
 
