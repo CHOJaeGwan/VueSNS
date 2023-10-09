@@ -17,7 +17,7 @@ module.exports = {
       {
         hid: "desc",
         name: "description",
-        content: "jjgs의 SNS",
+        content: "재관의 SNS",
       },
       {
         hid: "ogtitle",
@@ -26,8 +26,8 @@ module.exports = {
       },
       {
         hid: "ogdesc",
-        name: "og:description",
-        content: "jjgs SNS",
+        property: "og:description",
+        content: "재관의 SNS",
       },
       {
         hid: "ogtype",
@@ -49,7 +49,7 @@ module.exports = {
     link: [
       {
         rel: "shortcut icon",
-        href: "/vue-nodebird.png",
+        href: "/ggongzi.jpeg",
       },
     ],
   },
