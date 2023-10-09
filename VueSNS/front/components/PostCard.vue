@@ -90,6 +90,7 @@ export default {
     },
     onEditPost() {},
     onToggleComment() {
+      console.log(this.$store.state.posts.mainPosts);
       if (!this.commentOpened) {
         this.$store.dispatch("posts/loadComments", {
           postId: this.post.id,
