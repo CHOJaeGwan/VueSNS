@@ -173,7 +173,7 @@ router.post("/:id/comment", isLoggedIn, async (req, res, next) => {
     }
     const newComment = await db.Comment.create({
       PostId: post.id,
-      UserId: req.body.id,
+      UserId: req.user.id,
       content: req.body.content,
     });
     const comment = await db.Comment.findOne({
