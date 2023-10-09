@@ -90,9 +90,12 @@ export default {
     },
     onEditPost() {},
     onToggleComment() {
-      if (!commentOpened) {
-        this.$store.dispatch("posts/loadComments");
+      if (!this.commentOpened) {
+        this.$store.dispatch("posts/loadComments", {
+          postId: this.post.id,
+        });
       }
+      this.commentOpened = !this.commentOpened;
     },
     onRetweet() {
       if (!this.me) {
