@@ -33,7 +33,7 @@ export const mutations = {
   },
   loadComments(state, payload) {
     const index = state.mainPosts.findIndex((v) => v.id === payload.postId);
-    state.mainPosts[index].Comments = payload;
+    Vue.set(state.mainPosts[index], "Comments", payload.data);
   },
   concatImagePaths(state, payload) {
     state.imagePaths = state.imagePaths.concat(payload);
