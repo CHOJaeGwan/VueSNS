@@ -46,7 +46,7 @@ export default {
           property: "og:image",
           content: this.post.Images[0]
             ? this.post.Images[0].src
-            : "/static/ggongzi3.jpg",
+            : "http://jjgssns.com/static/sleepGgong2.jpg",
         },
         {
           hid: "ogurl",

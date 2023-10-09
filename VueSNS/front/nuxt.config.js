@@ -37,7 +37,7 @@ module.exports = {
       {
         hid: "ogimage",
         property: "og:image",
-        content: "/static/ggongzi3.jpg",
+        content: "http://jjgssns.com/static/sleepGgong2.jpg",
       },
       {
         hid: "ogurl",
