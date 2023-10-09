@@ -104,10 +104,6 @@ router.get("/:id", async (req, res, next) => {
           attributes: ["id"],
         },
         {
-          model: db.Comment,
-          attributes: ["id"],
-        },
-        {
           model: db.Post,
           as: "Retweet",
           include: [
@@ -253,10 +249,6 @@ router.post("/:id/retweet", isLoggedIn, async (req, res, next) => {
         {
           model: db.User,
           as: "Likers",
-          attributes: ["id"],
-        },
-        {
-          model: db.Comment,
           attributes: ["id"],
         },
         {
