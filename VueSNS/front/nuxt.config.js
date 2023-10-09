@@ -49,7 +49,7 @@ module.exports = {
     link: [
       {
         rel: "shortcut icon",
-        href: "/ggongzi.jpeg",
+        href: "/ggongzi3.jpeg",
       },
     ],
   },
