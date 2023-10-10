@@ -204,7 +204,7 @@ export const actions = {
       console.error(err);
     }
   }, 1000),
-  loadComment({ commit, state }, payload) {
+  loadComments({ commit, state }, payload) {
     this.$axios
       .get(`/post/${payload.postId}/comments`)
       .then((res) => {
