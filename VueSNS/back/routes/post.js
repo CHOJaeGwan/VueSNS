@@ -193,7 +193,7 @@ router.post("/:id/comment", isLoggedIn, async (req, res, next) => {
       ],
     });
     console.log(comment);
-    res.json(comment);
+    return res.json(comment);
   } catch (err) {
     console.error(err);
     next(err);
