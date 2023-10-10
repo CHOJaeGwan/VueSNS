@@ -21,7 +21,7 @@ export const mutations = {
     if (!state.mainPosts[index].Comments) {
       state.mainPosts[index].Comments = [];
     }
-    console.log(state.mainPosts[index]);
+    console.log(state.mainPosts[index], payload);
     state.mainPosts[index].Comments.unshift(payload);
   },
   loadPost(state, payload) {
