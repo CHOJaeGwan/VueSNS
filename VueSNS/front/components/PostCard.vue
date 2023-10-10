@@ -38,10 +38,10 @@
       <v-list v-if="post.Comments && post.Comments.length">
         <v-list-item v-for="c in post.Comments" :key="c.id">
           <v-list-item-avatar color="teal">
-            <span>{{ c.User.nickname[0] }}</span>
+            <span v-if="c.User">{{ c.User.nickname[0] }}</span>
           </v-list-item-avatar>
           <v-list-item-content>
-            <h3>{{ c.User.nickname }}</h3>
+            <h3 v-if="c.User">{{ c.User.nickname }}</h3>
             <div>{{ c.content }}</div>
           </v-list-item-content>
         </v-list-item>
