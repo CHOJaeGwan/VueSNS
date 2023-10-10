@@ -208,7 +208,10 @@ export const actions = {
     this.$axios
       .get(`/post/${payload.postId}/comments`)
       .then((res) => {
-        commit("loadComments", res.data);
+        commit("loadComments", {
+          postId: payload.postId,
+          data: res.data,
+        });
       })
       .catch((err) => {
         console.log(err);
